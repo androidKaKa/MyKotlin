@@ -3,6 +3,7 @@ package demo.kotlin.com.myapplication
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import demo.kotlin.com.myapplication.demo.kotlin.com.Person
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -16,6 +17,13 @@ class MainActivity : AppCompatActivity() {
 
         toast("test toast fun")
 
+        var person=Person()
+        person.name="tom"
+        person.address="gd"
+        person.age=12
+        person.sex=0
+
+        var name =person.name
     }
 
     data class Artist(var id: Long,
