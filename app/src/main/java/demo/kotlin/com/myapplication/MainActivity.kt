@@ -24,7 +24,30 @@ class MainActivity : AppCompatActivity() {
         person.sex=0
 
         var name =person.name
+        var listArr = ArrayList<String>()
+        var i:Int=0
+
+
+
+        val mRunnable = Runnable {
+            run {
+                Thread.sleep(5000)
+                println("5s后打印输出")
+                while(i<30000*20)
+                {i++
+                    listArr.add(person.name)
+                }
+
+            }
+        }
+
+
+        Thread(mRunnable).start()
     }
+
+
+
+
 
     data class Artist(var id: Long,
                       var name: String,
@@ -34,6 +57,7 @@ class MainActivity : AppCompatActivity() {
     fun add(x:Int,y:Int):Int=x+y
 
     fun sub(x:Int,y:Int):Int=x-y
+
 
 
     fun toast(str:String,time:Int= Toast.LENGTH_LONG)
